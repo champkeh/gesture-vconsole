@@ -1,0 +1,52 @@
+{
+  "name": "gesture-vconsole",
+  "version": "1.1.5",
+  "description": "Open or close vconsole by gesture",
+  "main": "build/index.js",
+  "scripts": {
+    "build": "rollup -c",
+    "test": "jest",
+    "prepublishOnly": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Zhangstring/gesture-vconsole.git"
+  },
+  "keywords": [
+    "gesture",
+    "vconsole"
+  ],
+  "author": "zxj",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Zhangstring/gesture-vconsole/issues"
+  },
+  "homepage": "https://github.com/Zhangstring/gesture-vconsole#readme",
+  "jest": {
+    "transform": {
+      "^.+\\.tsx?$": "<rootDir>/node_modules/ts-jest/preprocessor.js"
+    },
+    "testRegex": "(/__tests__/.*|\\.(test|spec))\\.(tsx?|jsx?)$",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "json",
+      "jsx"
+    ]
+  },
+  "dependencies": {
+    "vconsole": "^3.3.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.5.5",
+    "@babel/preset-env": "^7.5.5",
+    "rollup": "^1.17.0",
+    "rollup-plugin-typescript2": "^0.22.0",
+    "typescript": "^3.5.3",
+    "@types/jest": "^24.0.15",
+    "babel-jest": "^24.8.0",
+    "jest": "^24.8.0",
+    "ts-jest": "^24.0.2"
+  }
+}
