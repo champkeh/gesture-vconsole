@@ -1,22 +1,24 @@
+
 var VConsole = require('vconsole')
 
-class FourFingersTouchIndex {
-  i: number
-  constructor() {
-    this.i = 0
-  }
-}
 class GestureVConsole {
   vConsole: any
+  console: boolean
   timer: any
   i: number
   constructor() {
     this.i = 0
     this.timer = null
+    this.console = false
     this.vConsole = null
     this.init()
   }
   init() {
+    this.vConsole = new VConsole()
+    this.vConsole.setOption('onReady', () => {
+      this.vConsole.hideSwitch()
+      this.console = false
+    })
     document.addEventListener(
       'touchstart',
       this.switchVConsole.bind(this),
@@ -32,14 +34,13 @@ class GestureVConsole {
       this.add()
       var index = this.i
       if (index === 4) {
-        if (this.vConsole) {
-          this.vConsole.destroy()
-          this.vConsole = null
+        if (this.console) {
+          this.vConsole.hideSwitch()
+          this.console = false
         } else {
-          this.vConsole = new VConsole()
-          this.vConsole.show()
+          this.vConsole.showSwitch()
+          this.console = true
         }
-
         this.remove()
       } else {
         this.timer = setTimeout(() => {

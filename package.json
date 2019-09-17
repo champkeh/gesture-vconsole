@@ -1,6 +1,6 @@
 {
   "name": "gesture-vconsole",
-  "version": "1.1.5",
+  "version": "1.1.7",
   "description": "Open or close vconsole by gesture",
   "main": "build/index.js",
   "scripts": {
@@ -41,12 +41,12 @@
   "devDependencies": {
     "@babel/core": "^7.5.5",
     "@babel/preset-env": "^7.5.5",
-    "rollup": "^1.17.0",
-    "rollup-plugin-typescript2": "^0.22.0",
-    "typescript": "^3.5.3",
     "@types/jest": "^24.0.15",
     "babel-jest": "^24.8.0",
     "jest": "^24.8.0",
-    "ts-jest": "^24.0.2"
+    "rollup": "^1.17.0",
+    "rollup-plugin-typescript2": "^0.22.0",
+    "ts-jest": "^24.0.2",
+    "typescript": "^3.5.3"
   }
 }

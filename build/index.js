@@ -5,10 +5,17 @@ var GestureVConsole = /** @class */ (function () {
     function GestureVConsole() {
         this.i = 0;
         this.timer = null;
+        this.console = false;
         this.vConsole = null;
         this.init();
     }
     GestureVConsole.prototype.init = function () {
+        var _this = this;
+        this.vConsole = new VConsole();
+        this.vConsole.setOption('onReady', function () {
+            _this.vConsole.hideSwitch();
+            _this.console = false;
+        });
         document.addEventListener('touchstart', this.switchVConsole.bind(this), false);
     };
     GestureVConsole.prototype.switchVConsole = function (e) {
@@ -21,13 +28,13 @@ var GestureVConsole = /** @class */ (function () {
             this.add();
             var index = this.i;
             if (index === 4) {
-                if (this.vConsole) {
-                    this.vConsole.destroy();
-                    this.vConsole = null;
+                if (this.console) {
+                    this.vConsole.hideSwitch();
+                    this.console = false;
                 }
                 else {
-                    this.vConsole = new VConsole();
-                    this.vConsole.show();
+                    this.vConsole.showSwitch();
+                    this.console = true;
                 }
                 this.remove();
             }
