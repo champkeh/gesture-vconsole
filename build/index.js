@@ -5,7 +5,7 @@ var GestureVConsole = /** @class */ (function () {
     function GestureVConsole() {
         this.i = 0;
         this.timer = null;
-        this.console = false;
+        this["switch"] = false;
         this.vConsole = null;
         this.init();
     }
@@ -14,7 +14,7 @@ var GestureVConsole = /** @class */ (function () {
         this.vConsole = new VConsole();
         this.vConsole.setOption('onReady', function () {
             _this.vConsole.hideSwitch();
-            _this.console = false;
+            _this["switch"] = false;
         });
         document.addEventListener('touchstart', this.switchVConsole.bind(this), false);
     };
@@ -28,13 +28,13 @@ var GestureVConsole = /** @class */ (function () {
             this.add();
             var index = this.i;
             if (index === 4) {
-                if (this.console) {
+                if (this["switch"]) {
                     this.vConsole.hideSwitch();
-                    this.console = false;
+                    this["switch"] = false;
                 }
                 else {
                     this.vConsole.showSwitch();
-                    this.console = true;
+                    this["switch"] = true;
                 }
                 this.remove();
             }

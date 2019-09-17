@@ -3,13 +3,13 @@ var VConsole = require('vconsole')
 
 class GestureVConsole {
   vConsole: any
-  console: boolean
+  switch: boolean
   timer: any
   i: number
   constructor() {
     this.i = 0
     this.timer = null
-    this.console = false
+    this.switch = false
     this.vConsole = null
     this.init()
   }
@@ -17,7 +17,7 @@ class GestureVConsole {
     this.vConsole = new VConsole()
     this.vConsole.setOption('onReady', () => {
       this.vConsole.hideSwitch()
-      this.console = false
+      this.switch = false
     })
     document.addEventListener(
       'touchstart',
@@ -34,12 +34,12 @@ class GestureVConsole {
       this.add()
       var index = this.i
       if (index === 4) {
-        if (this.console) {
+        if (this.switch) {
           this.vConsole.hideSwitch()
-          this.console = false
+          this.switch = false
         } else {
           this.vConsole.showSwitch()
-          this.console = true
+          this.switch = true
         }
         this.remove()
       } else {
