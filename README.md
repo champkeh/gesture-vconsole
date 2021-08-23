@@ -4,11 +4,13 @@
 Open or close vconsole by gesture
 
 ```bash
-npm install --save-dev gesture-vconsole
+yarn add @cktech/vconsole -D
+or
+npm install --save-dev @cktech/vconsole
 ```
 
 ```bash
-import GVS from 'gesture-vconsole'
+import GVS from '@cktech/vconsole'
 new GVS()
 ```
 

@@ -22,12 +22,11 @@ var GestureVConsole = /** @class */ (function () {
         var _this = this;
         if (e.touches.length === 4) {
             if (this.timer) {
-                clearInterval(this.timer);
+                clearTimeout(this.timer);
                 this.timer = null;
             }
             this.add();
-            var index = this.i;
-            if (index === 4) {
+            if (this.i === 4) {
                 if (this["switch"]) {
                     this.vConsole.hideSwitch();
                     this["switch"] = false;
