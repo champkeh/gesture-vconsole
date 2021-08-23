@@ -1,6 +1,6 @@
 {
   "name": "@cktech/vconsole",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Open or close vConsole by gesture",
   "main": "build/index.js",
   "scripts": {
